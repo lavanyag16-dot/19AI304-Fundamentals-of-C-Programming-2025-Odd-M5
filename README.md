@@ -39,7 +39,46 @@
 ### Step 12: 
   Stop
 # Program:
+```
+#include <stdio.h>
+
+// Call by Value
+void swapValue(int a, int b) {
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("After Call by Value: a = %d, b = %d\n", a, b);
+}
+
+// Call by Reference
+void swapReference(int *a, int *b) {
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+
+    printf("After Call by Reference: a = %d, b = %d\n", *a, *b);
+}
+
+int main() {
+    int a, b;
+
+    scanf("%d %d", &a, &b);
+
+    printf("Before Swapping: a = %d, b = %d\n", a, b);
+
+    swapValue(a, b);
+
+    swapReference(&a, &b);
+
+    return 0;
+}
+```
 # Output:
+<img width="740" height="238" alt="image" src="https://github.com/user-attachments/assets/a344783a-d31a-4cef-bc7f-0b8e5f55fd93" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +116,32 @@
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int fibonacci(int n) {
+    if (n == 0)
+        return 0;
+    if (n == 1)
+        return 1;
+
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main() {
+    int n, i;
+
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+        printf("%d ", fibonacci(i));
+
+    return 0;
+}
+```
 # Output:
+<img width="740" height="231" alt="image" src="https://github.com/user-attachments/assets/74859669-44d5-46b3-b0bd-a881ba21b348" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +183,48 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void printEven(int lower, int upper) {
+    if (lower > upper)
+        return;
+
+    printf("%d ", lower);
+    printEven(lower + 2, upper);
+}
+
+void printOdd(int lower, int upper) {
+    if (lower > upper)
+        return;
+
+    printf("%d ", lower);
+    printOdd(lower + 2, upper);
+}
+
+int main() {
+    int lower, upper, choice;
+
+    scanf("%d %d", &lower, &upper);
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        if (lower % 2 != 0)
+            lower++;
+        printEven(lower, upper);
+    }
+    else if (choice == 2) {
+        if (lower % 2 == 0)
+            lower++;
+        printOdd(lower, upper);
+    }
+
+    return 0;
+}
+```
 # Output:
+<img width="740" height="271" alt="image" src="https://github.com/user-attachments/assets/5538aeb9-1669-4010-a428-4ff61a5a749e" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +266,36 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, i, sum = 0;
+    int *arr;
+
+    scanf("%d", &n);
+
+    arr = (int *)calloc(n, sizeof(int));
+
+    if (arr == NULL)
+        return 1;
+
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    printf("Sum = %d", sum);
+
+    free(arr);
+
+    return 0;
+}
+```
 # Output:
+<img width="741" height="280" alt="image" src="https://github.com/user-attachments/assets/ab3b113c-b22f-4571-b04a-cbb9d5655ba0" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +331,31 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void display(int arr[], int n) {
+    int i;
+
+    for (i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+}
+
+int main() {
+    int arr[100], n, i;
+
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    display(arr, n);
+
+    return 0;
+}
+```
 # Output:
+<img width="741" height="271" alt="image" src="https://github.com/user-attachments/assets/5c2dbd57-3407-43b7-9234-6c32b15d131a" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
